@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FSStickyView: View {
-    private let stickConfig = FSMainConfig.shared.stickyConfig
+    private let stickyConfig = FSMainConfig.shared.stickyConfig
     let minWidth: CGFloat
     let defaultWidth: CGFloat
     let minXOffset: CGFloat
@@ -26,8 +26,8 @@ struct FSStickyView: View {
             let isScrolled = minX < 0
             
             let totalSpacing =
-            stickConfig.padding*2 +
-            stickConfig.spacing
+            stickyConfig.padding*2 +
+            stickyConfig.spacing
             
             let width =
             isScrolled
@@ -35,7 +35,7 @@ struct FSStickyView: View {
             : defaultWidth/2 - totalSpacing/2
                         
             HStack(spacing: 0) {
-                HStack(spacing: stickConfig.spacing) {
+                HStack(spacing: stickyConfig.spacing) {
                     FSStickySortingView(
                         width: width,
                         isSelected: isSortingSelected,
@@ -51,26 +51,26 @@ struct FSStickyView: View {
                         filteringClicked()
                     }
                 }
-                .padding(.horizontal, stickConfig.padding)
+                .padding(.horizontal, stickyConfig.padding)
                 
                 let totalWidth =
                 FSMainConfig.shared.stickySortingConfig.minWidth +
                 FSMainConfig.shared.stickyFilteringConfig.minWidth
                 Divider().frame(
                     height: minX < -totalWidth
-                    ? stickConfig.dividerHeight
+                    ? stickyConfig.dividerHeight
                     : 0
-                )
+                ).background(stickyConfig.dividerColor)
             }
-            .frame(height: stickConfig.height)
-            .background(stickConfig.backgroundColor)
+            .frame(height: stickyConfig.height)
+            .background(stickyConfig.backgroundColor)
             .offset(
                 x: isScrolled ? -minX : 0
             )
         }
         .frame(
             width: defaultWidth,
-            height: stickConfig.height
+            height: stickyConfig.height
         )
     }
 }

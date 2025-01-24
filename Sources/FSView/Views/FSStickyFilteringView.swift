@@ -67,6 +67,7 @@ struct FSStickyFilteringView: View {
             if selectedFilteringCount > 0 {
                 Text("\(selectedFilteringCount)")
                     .font(config.badgeFont)
+                    .frame(height: 8)
                     .foregroundColor(config.badgeTextColor)
                     .padding(config.badgePadding)
                     .background(
@@ -114,7 +115,7 @@ private struct TestFSStickyFilteringView: View {
         VStack{
             FSStickyFilteringView(
                 width: 100,
-                selectedFilteringCount: 1,
+                selectedFilteringCount: 99,
                 isScrolled: isScrolled
             ){
                 isScrolled.toggle()

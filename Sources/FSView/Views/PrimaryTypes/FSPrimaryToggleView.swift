@@ -10,6 +10,7 @@ import SwiftUI
 struct FSPrimaryToggleView: View {
     private let config = FSMainConfig.shared.primaryToggleConfig
     let item: String
+    let isActive: Bool
     let isOpened: Bool
     let action: () -> Void
     
@@ -20,7 +21,7 @@ struct FSPrimaryToggleView: View {
                     .font(config.textFont)
                     .frame(height: config.height)
                     .foregroundColor(
-                        isOpened
+                        isActive
                         ? config.selectedTextColor
                         : config.textColor
                     )
@@ -43,7 +44,7 @@ struct FSPrimaryToggleView: View {
                     cornerRadius: config.cornerRadius
                 )
                 .fill(
-                    isOpened
+                    isActive
                     ? config.selectedBackgroundColor
                     : config.backgroundColor
                 )
@@ -52,7 +53,7 @@ struct FSPrimaryToggleView: View {
                         cornerRadius: config.cornerRadius
                     )
                     .strokeBorder(
-                        isOpened
+                        isActive
                         ? config.selectedBorderColor
                         : config.borderColor,
                         lineWidth: config.borderWidth
@@ -71,15 +72,16 @@ struct FSPrimaryToggleView: View {
 //Test view
 #if DEBUG
 private struct TestFSPrimaryToggleView: View {
-    @State var isOpened = false
+    @State var isActive = false
     
     var body: some View {
         VStack{
             FSPrimaryToggleView(
                 item: "Primary Item",
-                isOpened: isOpened
+                isActive: isActive,
+                isOpened: true
             ) {
-                isOpened.toggle()
+                isActive.toggle()
             }
         }
     }

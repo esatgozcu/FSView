@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FSView: View {
+public struct FSView: View {
     private let mainConfig = FSMainConfig.shared
     @Binding var sortingItems: [SortingItemModel]
     @Binding var filteringItems: [FilteringItemModel]
@@ -16,7 +16,23 @@ struct FSView: View {
     let primarySortingItemClicked: (SortingItemModel) -> ()
     let primaryFilteringItemClicked: (FilteringItemModel) -> ()
     
-    var body: some View {
+    public init(
+        sortingItems: Binding<[SortingItemModel]>,
+        filteringItems: Binding<[FilteringItemModel]>,
+        sortingItemClicked: @escaping () -> Void,
+        filteringItemClicked: @escaping () -> Void,
+        primarySortingItemClicked: @escaping (SortingItemModel) -> Void,
+        primaryFilteringItemClicked: @escaping (FilteringItemModel) -> Void
+    ) {
+        self._sortingItems = sortingItems
+        self._filteringItems = filteringItems
+        self.sortingItemClicked = sortingItemClicked
+        self.filteringItemClicked = filteringItemClicked
+        self.primarySortingItemClicked = primarySortingItemClicked
+        self.primaryFilteringItemClicked = primaryFilteringItemClicked
+    }
+    
+    public var body: some View {
         let totalSpacing =
         (mainConfig.stickyConfig.padding*2) +
         mainConfig.stickyConfig.spacing
@@ -37,14 +53,8 @@ struct FSView: View {
                     minWidth: minWidth,
                     defaultWidth: defaultWidth,
                     minXOffset: 0,
-                    isSortingSelected: sortingItems.filter{
-                        $0.isDefault != true
-                    }.contains{
-                        $0.isSelected == true
-                    },
-                    selectedFilteringCount: filteringItems.filter{
-                        $0.isSelected == true
-                    }.count,
+                    isSortingSelected: isSortingSelected(),
+                    selectedFilteringCount: filteredItemCount(),
                     sortingClicked: {
                         sortingItemClicked()
                     },
@@ -85,7 +95,7 @@ struct FSView: View {
     //MARK: Filter items
     @ViewBuilder
     func getFilterItems(item: FilteringItemModel) -> some View {
-        switch item.type {
+        switch item.itemType {
         case .normal:
             FSPrimaryView(
                 item: item.title,
@@ -103,14 +113,45 @@ struct FSView: View {
                     primaryFilteringItemClicked(item)
                 }
             )
-        case .toggle:
+        case .toggle(let toggleModel):
             FSPrimaryToggleView(
                 item: item.title,
-                isOpened: item.isOpened,
+                isActive: detectToggleIsActive(
+                    isSelected: item.isSelected,
+                    toggleModel: toggleModel
+                ), 
+                isOpened: item.isSelected,
                 action: {
                     primaryFilteringItemClicked(item)
                 }
             )
+        }
+    }
+    private func detectToggleIsActive(isSelected: Bool, toggleModel: [PrimaryToggleModel]) -> Bool{
+        if isSelected == true{
+            return true
+        }
+        else{
+            return toggleModel.contains{
+                $0.isSelected == true
+            }
+        }
+    }
+    private func isSortingSelected() -> Bool{
+        return sortingItems.filter{
+            $0.isDefault != true
+        }.contains{
+            $0.isSelected == true
+        }
+    }
+    private func filteredItemCount() -> Int {
+        return filteringItems.reduce(0) { (total, item) in
+            switch item.itemType {
+            case .normal, .withIcon:
+                return total + (item.isSelected ? 1 : 0)
+            case .toggle(let toggleModel):
+                return total + toggleModel.filter(\.isSelected).count
+            }
         }
     }
 }
@@ -138,7 +179,9 @@ private struct TestFSView: View {
         FilteringItemModel(
             title: "Categories",
             isPrimary: true,
-            type: .toggle
+            type: .toggle(
+                []
+            )
         ),
         FilteringItemModel(
             title: "Bestsellers",

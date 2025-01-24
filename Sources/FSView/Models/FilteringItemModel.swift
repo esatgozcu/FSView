@@ -7,31 +7,97 @@
 
 import SwiftUI
 
-struct FilteringItemModel: Identifiable {
-    let id = UUID()
-    let title: String
-    var isSelected: Bool = false
-    var isPrimary: Bool = false
-    var isOpened: Bool = false
-    var type: FilterButtonType = .normal
+public struct FilteringItemModel: Identifiable {
+    public let id = UUID()
+    public let title: String
+    public var isSelected: Bool
+    public var isPrimary: Bool
+    public var itemType: FilterButtonType
+    
+    public init(title: String,
+                isSelected: Bool = false,
+                isPrimary: Bool = false,
+                type: FilterButtonType = .normal) {
+        self.title = title
+        self.isSelected = isSelected
+        self.isPrimary = isPrimary
+        self.itemType = type
+    }
+    
+    public func getPrimaryToggleModel() -> [PrimaryToggleModel]? {
+        switch itemType {
+        case .toggle(let toggleModel):
+            return toggleModel
+        default:
+            return nil
+        }
+    }
 }
 
-struct PrimaryIconModel{
-    var icon: Image
+public struct PrimaryIconModel{
+    public var icon: Image
     // Only available with systemImage
-    var iconForegroundColor: Color?
+    public var iconForegroundColor: Color?
     // Background
-    var selectedBackgroundColor: Color = FSMainConfig.shared.primaryIconConfig.selectedBackgroundColor
-    var backgroundColor: Color = FSMainConfig.shared.primaryIconConfig.backgroundColor
+    public var selectedBackgroundColor: Color
+    public var backgroundColor: Color
     // Border
-    var selectedBorderColor: Color = FSMainConfig.shared.primaryIconConfig.selectedBorderColor
-    var borderColor: Color = FSMainConfig.shared.primaryIconConfig.borderColor
+    public var selectedBorderColor: Color
+    public var borderColor: Color
+    
+    public init(icon: Image,
+                iconForegroundColor: Color? = nil,
+                selectedBackgroundColor: Color = FSMainConfig.shared.primaryIconConfig.selectedBackgroundColor,
+                backgroundColor: Color = FSMainConfig.shared.primaryIconConfig.backgroundColor,
+                selectedBorderColor: Color = FSMainConfig.shared.primaryIconConfig.selectedBorderColor,
+                borderColor: Color = FSMainConfig.shared.primaryIconConfig.borderColor
+    ) {
+        self.icon = icon
+        self.iconForegroundColor = iconForegroundColor
+        self.selectedBackgroundColor = selectedBackgroundColor
+        self.backgroundColor = backgroundColor
+        self.selectedBorderColor = selectedBorderColor
+        self.borderColor = borderColor
+    }
 }
 
-enum FilterButtonType{
+public struct PrimaryToggleModel: Identifiable{
+    public let id = UUID()
+    public let title: String
+    public var isSelected: Bool
+    
+    public init(title: String,
+                isSelected: Bool = false) {
+        self.title = title
+        self.isSelected = isSelected
+    }
+}
+
+public enum FilterButtonType{
     case normal
-    case toggle
+    case toggle([PrimaryToggleModel])
     case withIcon(PrimaryIconModel)
+    
+    public var isNormal: Bool {
+        if case .normal = self {
+            return true
+        }
+        return false
+    }
+    
+    public var isToggle: Bool {
+        if case .toggle = self {
+            return true
+        }
+        return false
+    }
+    
+    public var isWithIcon: Bool {
+        if case .withIcon = self {
+            return true
+        }
+        return false
+    }
 }
 
 
