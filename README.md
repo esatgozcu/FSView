@@ -4,7 +4,7 @@ FSView is a versatile and intuitive SwiftUI component designed to streamline **s
 
 
 
-## 🚀 Features
+### 🚀 Features
 
 - **Dynamic Visibility**:
   - Sorting and filtering panels dynamically open and close based on user interaction.
@@ -16,7 +16,7 @@ FSView is a versatile and intuitive SwiftUI component designed to streamline **s
 
 
 
-## 📦 Swift Package Manager
+### 📦 Swift Package Manager
 
 FSView is available through [Swift Package Manager](https://swift.org/package-manager/). Add FSView as a dependency to your `Package.swift`:
 
@@ -25,12 +25,12 @@ FSView is available through [Swift Package Manager](https://swift.org/package-ma
 ```
 
 
-## ⚙️ Version Compatibility
+### ⚙️ Version Compatibility
 
 - iOS 15.0+
 
 
-## 🛠️ Usage
+### 🛠️ Usage
 
 Here’s a sample implementation of **FSView**:
 
@@ -80,9 +80,9 @@ struct ContentView: View {
 }
 ```
 
-## 💡 Customization
+### 💡 Customization
 
-### Updating Configurations
+#### Updating Configurations
 
 `FSMainConfig` uses a singleton approach, making it accessible throughout your app:
 ```swift
@@ -209,11 +209,11 @@ Configurations for sticky filtering, including badges and icons.
 
 
 
-## 📜 License
+### 📜 License
 
 This framework is provided under the MIT License. Feel free to modify and use it in your projects.
 
-## 🤝 Contributions
+### 🤝 Contributions
 
 Contributions are welcome! If you have ideas or improvements, feel free to:
 
