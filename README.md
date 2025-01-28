@@ -2,7 +2,7 @@
 
 FSView is a versatile and intuitive SwiftUI component designed to streamline **sorting** and **filtering** operations in your applications. It provides users with a seamless interface to sort and filter products or items effortlessly.
 
----
+
 
 ## 🚀 Features
 
@@ -14,7 +14,7 @@ FSView is a versatile and intuitive SwiftUI component designed to streamline **s
 - **Built with SwiftUI**:
   - Fully utilizes SwiftUI's animations and modern view-building principles.
 
----
+
 
 ## 📦 Swift Package Manager
 
@@ -24,7 +24,7 @@ CustomTextfield is available through [Swift Package Manager](https://swift.org/p
 .package(url: "https://github.com/esatgozcu/FSView", from: "main")
 ```
 
----
+
 
 ## 🛠️ Usage
 
@@ -123,7 +123,7 @@ struct FSViewApp: App {
 }
 ```
 
----
+
 
 ### Configuration Sections
 
@@ -133,7 +133,7 @@ General settings for spacing and scroll background.
   - `spacing`: `CGFloat`
   - `scrollBackground`: `Color`
 
----
+
 
 #### FSStickyConfig
 Settings for sticky headers (e.g., height, padding, and divider color).
@@ -143,7 +143,7 @@ Settings for sticky headers (e.g., height, padding, and divider color).
   - `height`: `CGFloat`
   - `padding`: `CGFloat`
 
----
+
 
 #### FSPrimaryConfig
 Styling for primary sections (e.g., text, background, and border).
@@ -153,7 +153,7 @@ Styling for primary sections (e.g., text, background, and border).
   - `borderColor`: `Color`
   - `cornerRadius`: `CGFloat`
 
----
+
 
 #### FSPrimaryToggleConfig
 Customizations for toggleable sections with icons.
@@ -162,7 +162,7 @@ Customizations for toggleable sections with icons.
   - `imageSize`: `CGSize`
   - `spacing`: `CGFloat`
 
----
+
 
 #### FSPrimaryIconConfig
 Primary sections with icons (e.g., icon size, spacing).
@@ -170,7 +170,7 @@ Primary sections with icons (e.g., icon size, spacing).
   - `imageSize`: `CGSize`
   - `spacing`: `CGFloat`
 
----
+
 
 #### FSPrimarySortingConfig
 Settings for sorting sections.
@@ -178,7 +178,6 @@ Settings for sorting sections.
   - `selectedBackgroundColor`: `Color`
   - `cornerRadius`: `CGFloat`
 
----
 
 #### FSStickySortingConfig
 Sticky sorting configurations with badge support.
@@ -187,7 +186,7 @@ Sticky sorting configurations with badge support.
   - `imageSize`: `CGSize`
   - `badgeTextColor`: `Color`
 
----
+
 
 #### FSStickyFilteringConfig
 Configurations for sticky filtering, including badges and icons.
@@ -196,7 +195,7 @@ Configurations for sticky filtering, including badges and icons.
   - `badgeBackgroundColor`: `Color`
   - `badgeOffset`: `CGPoint`
 
----
+
 
 ### Notes
 
@@ -204,7 +203,7 @@ Configurations for sticky filtering, including badges and icons.
 - Use SwiftUI's `Color` and `Font` to ensure seamless integration.
 - Make sure to call configuration updates in your app's `App` initializer to apply settings globally.
 
----
+
 
 ## 📜 License
 
