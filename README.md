@@ -18,7 +18,7 @@ FSView is a versatile and intuitive SwiftUI component designed to streamline **s
 
 ## 📦 Swift Package Manager
 
-CustomTextfield is available through [Swift Package Manager](https://swift.org/package-manager/). Add CustomTextField as a dependency to your `Package.swift`:
+FSView is available through [Swift Package Manager](https://swift.org/package-manager/). Add FSView as a dependency to your `Package.swift`:
 
 ```Swift
 .package(url: "https://github.com/esatgozcu/FSView", from: "main")
