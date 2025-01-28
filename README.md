@@ -25,7 +25,7 @@ FSView is available through [Swift Package Manager](https://swift.org/package-ma
 ```
 
 
-## 📦 Version Compatibility
+## ⚙️ Version Compatibility
 
 - iOS 15.0+
 
