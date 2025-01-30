@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
     <img src="https://img.shields.io/badge/Min-iOS 15.0+-cyan.svg" alt="iOS 15.0+" />
     <img src="https://img.shields.io/badge/UI-SwiftUI-red.svg" alt="SwiftUI" />
     <img src="https://img.shields.io/badge/licence-MIT-blue.svg?style=flat" alt="MIT License" />
@@ -7,13 +7,14 @@
     </a>
 </p>
 
+
+<p align="left">
+    <img src ="https://github.com/user-attachments/assets/9e7e6e9c-97fa-41c7-bff3-7ba02c716674" alt="Logo" title="FSView" width=400 />
+</p>
+
 # FSView - SwiftUI Filtering & Sorting Component
 
 FSView is a versatile and intuitive SwiftUI component designed to streamline **filtering** and **sorting** operations in your applications. It provides users with a seamless interface to sort and filter products or items effortlessly.
-
-<p align="center">
-    <img src ="https://github.com/user-attachments/assets/562905da-7866-455c-a70b-45da6219f0b9" alt="Logo" title="FSView" width=400 />
-</p>
 
 ### 🚀 Features
 
