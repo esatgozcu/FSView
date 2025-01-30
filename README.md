@@ -152,6 +152,11 @@ struct ContentView: View {
     }
 }
 ```
+#### Notes
+
+- isPrimary: It represents the primary items that are intended to be displayed in the right flow. Only values that are true will be shown.
+- There are three types of primary buttons: Normal, withIcon, and Toggle buttons. You can customize these buttons.
+
 
 ### 💡 Customization
 
