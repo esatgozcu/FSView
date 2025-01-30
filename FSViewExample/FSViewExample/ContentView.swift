@@ -250,7 +250,7 @@ struct ExampleProductGridView: View {
                             .shadow(color: Color.gray.opacity(0.1), radius: 6, x: 0, y: 4)
                             .padding(5)
                         // Watermark text
-                        Text("Products")
+                        Text("Product")
                             .font(.body)
                             .foregroundColor(.black)
                             .opacity(0.5)
@@ -259,7 +259,7 @@ struct ExampleProductGridView: View {
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.vertical, 20)
+            .padding(.vertical, 10)
         }
     }
 }

@@ -10,9 +10,7 @@ import FSView
 
 @main
 struct FSViewApp: App {
-    init() {
-        updateDataBeforeLaunch()
-    }
+    let config = FSMainConfig.shared
     
     var body: some Scene {
         WindowGroup {
@@ -20,12 +18,16 @@ struct FSViewApp: App {
         }
     }
     
+    init() {
+        updateDataBeforeLaunch()
+    }
+    
     //MARK: Update UI
     private func updateDataBeforeLaunch() {
-        FSMainConfig.shared.updateFsViewConfig { fsViewConfig in
+        config.updateFsViewConfig { fsViewConfig in
             //fsViewConfig.spacing = 10
         }
-        FSMainConfig.shared.updateFsStickConfig { stickyConfig in
+        config.updateFsStickConfig { stickyConfig in
             //stickyConfig.dividerColor = .red
         }
     }

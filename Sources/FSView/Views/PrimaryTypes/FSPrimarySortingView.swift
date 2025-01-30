@@ -61,7 +61,7 @@ private struct TestFSPrimarySortingView: View {
     var body: some View {
         VStack{
             FSPrimarySortingView(
-                item: "Primary Item",
+                item: "Sorting View",
                 isSelected: isSelected
             ) {
                 isSelected.toggle()

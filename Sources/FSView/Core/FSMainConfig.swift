@@ -79,6 +79,70 @@ public final class FSStickyConfig {
     fileprivate init() {}
 }
 
+// MARK: - FSStickyFiltering Configuration
+public final class FSStickyFilteringConfig {
+    // Text configurations
+    public var text: String = "Filtering"
+    public var textColor: Color = .primary
+    public var selectedTextColor: Color = .primary
+    public var textFont: Font = .system(size: 14, weight: .medium)
+    // Background configurations
+    public var backgroundColor: Color = Color(.systemBackground)
+    public var selectedBackgroundColor: Color = .orange.opacity(0.1)
+    // Icon configurations
+    public var image: Image = Image(systemName: "line.3.horizontal.decrease")
+    /// Only available with systemImage
+    public var systemImageForegroundColor: Color = .orange
+    public var imageSize: CGSize = CGSize(width: 15, height: 15)
+    public var scrolledImageSize: CGSize = CGSize(width: 17, height: 17)
+    // Border configurations
+    public var borderColor: Color = .gray.opacity(0.8)
+    public var selectedBorderColor: Color = .orange
+    public var borderWidth: CGFloat = 0.9
+    public var cornerRadius: CGFloat = 18
+    // Badge configurations
+    public var badgeTextColor: Color = .white
+    public var badgeBackgroundColor: Color = .orange
+    public var badgeFont: Font = .system(size: 9, weight: .medium)
+    public var badgePadding: CGFloat = 5.0
+    /// The reference point is the top-right corner of the rectangle.
+    public var badgeOffset: CGPoint = CGPoint(x: -6, y: -6)
+    // Size configurations
+    public var minWidth: CGFloat = 50
+    public var defaultWidth: CGFloat = 100
+    public var height: CGFloat = 36
+    
+    fileprivate init() {}
+}
+
+// MARK: - FSStickySorting Configuration
+public final class FSStickySortingConfig {
+    // Text configurations
+    public var text: String = "Sorting"
+    public var textColor: Color = .primary
+    public var textFont: Font = .system(size: 14, weight: .medium)
+    // Background configurations
+    public var backgroundColor: Color = Color(.systemBackground)
+    public var selectedBackgroundColor: Color = Color(.systemBackground)
+    // Image configurations
+    public var image: Image = Image(systemName: "arrow.up.arrow.down")
+    /// Only available with systemImage
+    public var systemImageForegroundColor: Color = .orange
+    public var imageSize: CGSize = CGSize(width: 15, height: 15)
+    public var scrolledImageSize: CGSize = CGSize(width: 17, height: 17)
+    // Border configurations
+    public var borderColor: Color = .gray.opacity(0.8)
+    public var selectedBorderColor: Color = .orange
+    public var borderWidth: CGFloat = 0.9
+    public var cornerRadius: CGFloat = 18
+    // Size configurations
+    public var minWidth: CGFloat = 50
+    public var defaultWidth: CGFloat = 100
+    public var height: CGFloat = 36
+    
+    fileprivate init() {}
+}
+
 // MARK: - FSPrimary Configuration
 public final class FSPrimaryConfig {
     // Background configurations
@@ -167,71 +231,6 @@ public final class FSPrimarySortingConfig {
     // Size configurations
     public var height: CGFloat = 36
     public var padding: CGFloat = 12
-    
-    fileprivate init() {}
-}
-
-
-// MARK: - FSStickySorting Configuration
-public final class FSStickySortingConfig {
-    // Text configurations
-    public var text: String = "Sorting"
-    public var textColor: Color = .primary
-    public var textFont: Font = .system(size: 14, weight: .medium)
-    // Background configurations
-    public var backgroundColor: Color = Color(.systemBackground)
-    public var selectedBackgroundColor: Color = Color(.systemBackground)
-    // Image configurations
-    public var image: Image = Image(systemName: "arrow.up.arrow.down")
-    /// Only available with systemImage
-    public var systemImageForegroundColor: Color = .orange
-    public var imageSize: CGSize = CGSize(width: 15, height: 15)
-    public var scrolledImageSize: CGSize = CGSize(width: 17, height: 17)
-    // Border configurations
-    public var borderColor: Color = .gray.opacity(0.8)
-    public var selectedBorderColor: Color = .orange
-    public var borderWidth: CGFloat = 0.9
-    public var cornerRadius: CGFloat = 18
-    // Size configurations
-    public var minWidth: CGFloat = 50
-    public var defaultWidth: CGFloat = 100
-    public var height: CGFloat = 36
-    
-    fileprivate init() {}
-}
-
-// MARK: - FSStickyFiltering Configuration
-public final class FSStickyFilteringConfig {
-    // Text configurations
-    public var text: String = "Filtering"
-    public var textColor: Color = .primary
-    public var selectedTextColor: Color = .primary
-    public var textFont: Font = .system(size: 14, weight: .medium)
-    // Background configurations
-    public var backgroundColor: Color = Color(.systemBackground)
-    public var selectedBackgroundColor: Color = .orange.opacity(0.1)
-    // Icon configurations
-    public var image: Image = Image(systemName: "line.3.horizontal.decrease")
-    /// Only available with systemImage
-    public var systemImageForegroundColor: Color = .orange
-    public var imageSize: CGSize = CGSize(width: 15, height: 15)
-    public var scrolledImageSize: CGSize = CGSize(width: 17, height: 17)
-    // Border configurations
-    public var borderColor: Color = .gray.opacity(0.8)
-    public var selectedBorderColor: Color = .orange
-    public var borderWidth: CGFloat = 0.9
-    public var cornerRadius: CGFloat = 18
-    // Badge configurations
-    public var badgeTextColor: Color = .white
-    public var badgeBackgroundColor: Color = .orange
-    public var badgeFont: Font = .system(size: 9, weight: .medium)
-    public var badgePadding: CGFloat = 5.0
-    /// The reference point is the top-right corner of the rectangle.
-    public var badgeOffset: CGPoint = CGPoint(x: -6, y: -6)
-    // Size configurations
-    public var minWidth: CGFloat = 50
-    public var defaultWidth: CGFloat = 100
-    public var height: CGFloat = 36
     
     fileprivate init() {}
 }

@@ -162,7 +162,8 @@ public struct FSView: View {
     TestFSView()
 }
 private struct TestFSView: View {
-    @State var sortingItems: [SortingItemModel] = [
+    @State private var sortingItems: [SortingItemModel] = [
+        SortingItemModel(title: "Recommended", isSelected: true, isDefault: true),
         SortingItemModel(title: "Most Expensive"),
         SortingItemModel(title: "Cheapest"),
         SortingItemModel(title: "Top Selling"),
@@ -171,16 +172,41 @@ private struct TestFSView: View {
             isPrimary: true
         )
     ]
-    @State var filteringItems: [FilteringItemModel] = [
+    @State private var filteringItems: [FilteringItemModel] = [
         FilteringItemModel(
-            title: "Most Commented",
-            isPrimary: true
+            title: "In Stock",
+            isPrimary: false
+        ),
+        FilteringItemModel(
+            title: "Coming soon",
+            isPrimary: false
         ),
         FilteringItemModel(
             title: "Categories",
             isPrimary: true,
             type: .toggle(
-                []
+                [
+                    PrimaryToggleModel(title: "Shoes"),
+                    PrimaryToggleModel(title: "Clothing"),
+                    PrimaryToggleModel(title: "Sports"),
+                    PrimaryToggleModel(title: "Cosmetics"),
+                    PrimaryToggleModel(title: "Personal"),
+                    PrimaryToggleModel(title: "Care"),
+                    PrimaryToggleModel(title: "Accessories"),
+                    PrimaryToggleModel(title: "Electronics")
+                ]
+            )
+        ),
+        FilteringItemModel(
+            title: "Brands",
+            isPrimary: false,
+            type: .toggle(
+                [
+                    PrimaryToggleModel(title: "Puma"),
+                    PrimaryToggleModel(title: "Reebok"),
+                    PrimaryToggleModel(title: "Under Armour"),
+                    PrimaryToggleModel(title: "Asics")
+                ]
             )
         ),
         FilteringItemModel(
@@ -192,7 +218,7 @@ private struct TestFSView: View {
                         systemName: "gauge.open.with.lines.needle.67percent.and.arrowtriangle"
                     ),
                     iconForegroundColor: .red,
-                    selectedBackgroundColor: .red.opacity(0.05),
+                    selectedBackgroundColor: .red.opacity(0.1),
                     backgroundColor: .red.opacity(0.01),
                     selectedBorderColor: .red,
                     borderColor: .red.opacity(0.2)
@@ -208,7 +234,7 @@ private struct TestFSView: View {
                         systemName: "shippingbox.and.arrow.backward"
                     ),
                     iconForegroundColor: .green,
-                    selectedBackgroundColor: .green.opacity(0.05),
+                    selectedBackgroundColor: .green.opacity(0.1),
                     backgroundColor: .green.opacity(0.01),
                     selectedBorderColor: .green,
                     borderColor: .green.opacity(0.2)

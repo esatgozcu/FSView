@@ -90,19 +90,6 @@ private struct TestFSFilterWithIconView: View {
                     isSelected.toggle()
                 }
             )
-            FSPrimaryIconView(
-                item: "Primary Item",
-                isSelected: isSelected,
-                typeModel: .init(
-                    icon: Image(
-                        systemName: "gauge.open.with.lines.needle.67percent.and.arrowtriangle"
-                    ),
-                    iconForegroundColor: .green
-                ),
-                action: {
-                    isSelected.toggle()
-                }
-            )
         }
     }
 }

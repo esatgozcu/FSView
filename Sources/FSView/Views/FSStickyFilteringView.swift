@@ -115,7 +115,7 @@ private struct TestFSStickyFilteringView: View {
         VStack{
             FSStickyFilteringView(
                 width: 100,
-                selectedFilteringCount: 99,
+                selectedFilteringCount: 9,
                 isScrolled: isScrolled
             ){
                 isScrolled.toggle()
