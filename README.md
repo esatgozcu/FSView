@@ -2,7 +2,9 @@
 
 FSView is a versatile and intuitive SwiftUI component designed to streamline **sorting** and **filtering** operations in your applications. It provides users with a seamless interface to sort and filter products or items effortlessly.
 
+---
 
+![Ekran Kaydı 2025-01-30 08 50 56](https://github.com/user-attachments/assets/562905da-7866-455c-a70b-45da6219f0b9)
 
 ### 🚀 Features
 
@@ -13,7 +15,6 @@ FSView is a versatile and intuitive SwiftUI component designed to streamline **s
   - Icon-based Filtering: Includes visually distinct options for specific filters.
 - **Built with SwiftUI**:
   - Fully utilizes SwiftUI's animations and modern view-building principles.
-
 
 
 ### 📦 Swift Package Manager
