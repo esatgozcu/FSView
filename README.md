@@ -170,121 +170,170 @@ let config = FSMainConfig.shared
 #### Example:
 
 ```swift
+import SwiftUI
+import FSView
+
 @main
 struct FSViewApp: App {
-    init() {
-        configureUI()
-    }
-
+    let config = FSMainConfig.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
-
-    private func configureUI() {
-        // FSView general configuration
-        FSMainConfig.shared.updateFsViewConfig { config in
-            config.spacing = 10
-            config.scrollBackground = Color.gray.opacity(0.1)
+    
+    init() {
+        updateDataBeforeLaunch()
+    }
+    
+    //MARK: Update UI
+    private func updateDataBeforeLaunch() {
+        config.updateFsViewConfig { fsViewConfig in
+            //fsViewConfig.spacing = 10
         }
-
-        // Sticky section configuration
-        FSMainConfig.shared.updateFsStickConfig { config in
-            config.dividerColor = .red
-            config.height = 50
-        }
-
-        // Primary section configuration
-        FSMainConfig.shared.updateFsPrimaryConfig { config in
-            config.textColor = .blue
-            config.borderWidth = 1.0
-            config.cornerRadius = 20
+        config.updateFsStickConfig { stickyConfig in
+            //stickyConfig.dividerColor = .red
         }
     }
 }
+
 ```
-
-
 
 ### Configuration Sections
 
 #### FSViewConfig
+
 General settings for spacing and scroll background.
+
 - **Properties**:
-  - `spacing`: `CGFloat`
-  - `scrollBackground`: `Color`
-
-
+  - `spacing`: `CGFloat` = `5`
+  - `scrollBackground`: `Color` = `systemBackground`
 
 #### FSStickyConfig
-Settings for sticky headers (e.g., height, padding, and divider color).
+
+Settings for sticky headers, including height, padding, and divider properties.
+
 - **Properties**:
-  - `dividerHeight`: `CGFloat`
-  - `dividerColor`: `Color`
-  - `height`: `CGFloat`
-  - `padding`: `CGFloat`
-
-
+  - `backgroundColor`: `Color` = `systemBackground`
+  - `dividerHeight`: `CGFloat` = `36`
+  - `dividerColor`: `Color` = `separator`
+  - `height`: `CGFloat` = `40`
+  - `padding`: `CGFloat` = `10`
+  - `spacing`: `CGFloat` = `10`
 
 #### FSPrimaryConfig
-Styling for primary sections (e.g., text, background, and border).
+
+Styling for primary sections, including text, background, and border properties.
+
 - **Properties**:
-  - `textColor`: `Color`
-  - `selectedTextColor`: `Color`
-  - `borderColor`: `Color`
-  - `cornerRadius`: `CGFloat`
-
-
+  - `backgroundColor`: `Color` = `systemBackground`
+  - `selectedBackgroundColor`: `Color` = `cyan.opacity0.05`
+  - `textColor`: `Color` = `primary`
+  - `selectedTextColor`: `Color` = `blue`
+  - `textFont`: `Font` = `systemsize: 14, weight: .medium`
+  - `borderColor`: `Color` = `gray.opacity0.8`
+  - `selectedBorderColor`: `Color` = `cyan`
+  - `borderWidth`: `CGFloat` = `0.7`
+  - `cornerRadius`: `CGFloat` = `18`
+  - `height`: `CGFloat` = `36`
+  - `padding`: `CGFloat` = `12`
 
 #### FSPrimaryToggleConfig
+
 Customizations for toggleable sections with icons.
+
 - **Properties**:
-  - `imageSystemName`: `String`
-  - `imageSize`: `CGSize`
-  - `spacing`: `CGFloat`
-
-
+  - `backgroundColor`: `Color` = `systemBackground`
+  - `selectedBackgroundColor`: `Color` = `systemBackground`
+  - `textColor`: `Color` = `primary`
+  - `selectedTextColor`: `Color` = `primary`
+  - `textFont`: `Font` = `systemsize: 14, weight: .medium`
+  - `borderColor`: `Color` = `gray.opacity0.8`
+  - `selectedBorderColor`: `Color` = `orange`
+  - `borderWidth`: `CGFloat` = `0.7`
+  - `cornerRadius`: `CGFloat` = `18`
+  - `height`: `CGFloat` = `36`
+  - `padding`: `CGFloat` = `12`
+  - `spacing`: `CGFloat` = `12`
+  - `imageSystemName`: `String` = `chevron.up`
+  - `imageSize`: `CGSize` = `15x15`
 
 #### FSPrimaryIconConfig
-Primary sections with icons (e.g., icon size, spacing).
+
+Primary sections with icons.
+
 - **Properties**:
-  - `imageSize`: `CGSize`
-  - `spacing`: `CGFloat`
-
-
+  - `textColor`: `Color` = `primary`
+  - `selectedTextColor`: `Color` = `primary`
+  - `textFont`: `Font` = `systemsize: 14, weight: .medium`
+  - `borderWidth`: `CGFloat` = `0.7`
+  - `cornerRadius`: `CGFloat` = `18`
+  - `height`: `CGFloat` = `36`
+  - `padding`: `CGFloat` = `12`
+  - `spacing`: `CGFloat` = `6`
+  - `imageSize`: `CGSize` = `15x15`
+  - `selectedBackgroundColor`: `Color` = `cyan.opacity0.1`
+  - `backgroundColor`: `Color` = `systemBackground`
+  - `selectedBorderColor`: `Color` = `cyan`
+  - `borderColor`: `Color` = `gray.opacity0.8`
 
 #### FSPrimarySortingConfig
-Settings for sorting sections.
-- **Properties**:
-  - `selectedBackgroundColor`: `Color`
-  - `cornerRadius`: `CGFloat`
 
+Settings for sorting sections.
+
+- **Properties**:
+  - `backgroundColor`: `Color` = `systemBackground`
+  - `selectedBackgroundColor`: `Color` = `systemBackground`
+  - `textColor`: `Color` = `primary`
+  - `selectedTextColor`: `Color` = `primary`
+  - `textFont`: `Font` = `systemsize: 14, weight: .medium`
+  - `borderColor`: `Color` = `gray.opacity0.8`
+  - `selectedBorderColor`: `Color` = `orange`
+  - `borderWidth`: `CGFloat` = `0.7`
+  - `cornerRadius`: `CGFloat` = `18`
+  - `height`: `CGFloat` = `36`
+  - `padding`: `CGFloat` = `12`
 
 #### FSStickySortingConfig
+
 Sticky sorting configurations with badge support.
+
 - **Properties**:
-  - `text`: `String`
-  - `imageSize`: `CGSize`
-  - `badgeTextColor`: `Color`
-
-
+  - `text`: `String` = `Sorting`
+  - `textColor`: `Color` = `primary`
+  - `textFont`: `Font` = `systemsize: 14, weight: .medium`
+  - `backgroundColor`: `Color` = `systemBackground`
+  - `selectedBackgroundColor`: `Color` = `systemBackground`
+  - `imageSize`: `CGSize` = `15x15`
+  - `scrolledImageSize`: `CGSize` = `17x17`
+  - `borderColor`: `Color` = `gray.opacity0.8`
+  - `selectedBorderColor`: `Color` = `orange`
+  - `borderWidth`: `CGFloat` = `0.9`
+  - `cornerRadius`: `CGFloat` = `18`
+  - `minWidth`: `CGFloat` = `50`
+  - `defaultWidth`: `CGFloat` = `100`
+  - `height`: `CGFloat` = `36`
 
 #### FSStickyFilteringConfig
+
 Configurations for sticky filtering, including badges and icons.
+
 - **Properties**:
-  - `badgeFont`: `Font`
-  - `badgeBackgroundColor`: `Color`
-  - `badgeOffset`: `CGPoint`
+  - `text`: `String` = `Filtering`
+  - `badgeTextColor`: `Color` = `white`
+  - `badgeBackgroundColor`: `Color` = `orange`
+  - `badgeFont`: `Font` = `systemsize: 9, weight: .medium`
+  - `badgePadding`: `CGFloat` = `5.0`
+  - `badgeOffset`: `CGPoint` = `-6, -6`
+  - `minWidth`: `CGFloat` = `50`
+  - `defaultWidth`: `CGFloat` = `100`
+  - `height`: `CGFloat` = `36`
 
-
-
-### Notes
+#### Notes
 
 - All configurations are optional. Default values are provided for convenience.
-- Use SwiftUI's `Color` and `Font` to ensure seamless integration.
 - Make sure to call configuration updates in your app's `App` initializer to apply settings globally.
-
 
 
 ### 📜 License
