@@ -190,10 +190,10 @@ struct FSViewApp: App {
     //MARK: Update UI
     private func updateDataBeforeLaunch() {
         config.updateFsViewConfig { fsViewConfig in
-            //fsViewConfig.spacing = 10
+            fsViewConfig.spacing = 10
         }
         config.updateFsStickConfig { stickyConfig in
-            //stickyConfig.dividerColor = .red
+            stickyConfig.dividerColor = .red
         }
     }
 }
