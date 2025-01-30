@@ -44,19 +44,91 @@ struct ContentView: View {
         SortingItemModel(title: "Most Expensive"),
         SortingItemModel(title: "Cheapest"),
         SortingItemModel(title: "Top Selling"),
-        SortingItemModel(title: "Most Rated", isPrimary: true)
+        SortingItemModel(
+            title: "Most Rated",
+            isPrimary: true
+        )
     ]
-
     @State private var filteringItems: [FilteringItemModel] = [
-        FilteringItemModel(title: "In Stock", isPrimary: false),
+        FilteringItemModel(
+            title: "In Stock",
+            isPrimary: false
+        ),
+        FilteringItemModel(
+            title: "Coming soon",
+            isPrimary: false
+        ),
         FilteringItemModel(
             title: "Categories",
             isPrimary: true,
-            type: .toggle([
-                PrimaryToggleModel(title: "Shoes"),
-                PrimaryToggleModel(title: "Clothing"),
-                PrimaryToggleModel(title: "Sports")
-            ])
+            type: .toggle(
+                [
+                    PrimaryToggleModel(title: "Shoes"),
+                    PrimaryToggleModel(title: "Clothing"),
+                    PrimaryToggleModel(title: "Sports"),
+                    PrimaryToggleModel(title: "Cosmetics"),
+                    PrimaryToggleModel(title: "Personal"),
+                    PrimaryToggleModel(title: "Care"),
+                    PrimaryToggleModel(title: "Accessories"),
+                    PrimaryToggleModel(title: "Electronics")
+                ]
+            )
+        ),
+        FilteringItemModel(
+            title: "Brands",
+            isPrimary: false,
+            type: .toggle(
+                [
+                    PrimaryToggleModel(title: "Puma"),
+                    PrimaryToggleModel(title: "Reebok"),
+                    PrimaryToggleModel(title: "Under Armour"),
+                    PrimaryToggleModel(title: "Asics")
+                ]
+            )
+        ),
+        FilteringItemModel(
+            title: "Bestsellers",
+            isPrimary: true,
+            type: .withIcon(
+                PrimaryIconModel(
+                    icon: Image(
+                        systemName: "gauge.open.with.lines.needle.67percent.and.arrowtriangle"
+                    ),
+                    iconForegroundColor: .red,
+                    selectedBackgroundColor: .red.opacity(0.1),
+                    backgroundColor: .red.opacity(0.01),
+                    selectedBorderColor: .red,
+                    borderColor: .red.opacity(0.2)
+                )
+            )
+        ),
+        FilteringItemModel(
+            title: "Free shipping",
+            isPrimary: true,
+            type: .withIcon(
+                PrimaryIconModel(
+                    icon: Image(
+                        systemName: "shippingbox.and.arrow.backward"
+                    ),
+                    iconForegroundColor: .green,
+                    selectedBackgroundColor: .green.opacity(0.1),
+                    backgroundColor: .green.opacity(0.01),
+                    selectedBorderColor: .green,
+                    borderColor: .green.opacity(0.2)
+                )
+            )
+        ),
+        FilteringItemModel(
+            title: "Flash discount",
+            isPrimary: true,
+            type: .withIcon(
+                PrimaryIconModel(
+                    icon: Image(
+                        systemName: "arrow.down.left.square.fill"
+                    ),
+                    iconForegroundColor: .green
+                )
+            )
         )
     ]
 
