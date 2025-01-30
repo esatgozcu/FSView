@@ -7,12 +7,11 @@
     </a>
 </p>
 
+# FSView - SwiftUI Filtering & Sorting Component
 
 <p align="left">
     <img src ="https://github.com/user-attachments/assets/9e7e6e9c-97fa-41c7-bff3-7ba02c716674" alt="Logo" title="FSView" width=400 />
 </p>
-
-# FSView - SwiftUI Filtering & Sorting Component
 
 FSView is a versatile and intuitive SwiftUI component designed to streamline **filtering** and **sorting** operations in your applications. It provides users with a seamless interface to sort and filter products or items effortlessly.
 
