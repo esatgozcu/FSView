@@ -1,10 +1,19 @@
-# FSView - SwiftUI Sorting & Filtering Component
+<p align="center">
+    <img src="https://img.shields.io/badge/Min-iOS 15.0+-cyan.svg" alt="iOS 15.0+" />
+    <img src="https://img.shields.io/badge/UI-SwiftUI-red.svg" alt="SwiftUI" />
+    <img src="https://img.shields.io/badge/licence-MIT-blue.svg?style=flat" alt="MIT License" />
+    <a href= "https://linkedin.com/in/esatgozcu">
+        <img src="https://img.shields.io/badge/contact-@esatgozcu-green.svg?style=flat" />
+    </a>
+</p>
 
-FSView is a versatile and intuitive SwiftUI component designed to streamline **sorting** and **filtering** operations in your applications. It provides users with a seamless interface to sort and filter products or items effortlessly.
+# FSView - SwiftUI Filtering & Sorting Component
 
----
+FSView is a versatile and intuitive SwiftUI component designed to streamline **filtering** and **sorting** operations in your applications. It provides users with a seamless interface to sort and filter products or items effortlessly.
 
-![Ekran Kaydı 2025-01-30 08 50 56](https://github.com/user-attachments/assets/562905da-7866-455c-a70b-45da6219f0b9)
+<p align="center">
+    <img src ="https://github.com/user-attachments/assets/562905da-7866-455c-a70b-45da6219f0b9" alt="Logo" title="FSView" width=400 />
+</p>
 
 ### 🚀 Features
 
@@ -204,6 +213,8 @@ struct FSViewApp: App {
 
 #### FSViewConfig
 
+<img width="294" alt="FSViewConfig" src="https://github.com/user-attachments/assets/9a81e284-0716-4d65-bbb5-d5a69d7fea29" />
+
 General settings for spacing and scroll background.
 
 - **Properties**:
@@ -211,6 +222,8 @@ General settings for spacing and scroll background.
   - `scrollBackground`: `Color` = `systemBackground`
 
 #### FSStickyConfig
+
+<img width="177" alt="FSStickyConfig" src="https://github.com/user-attachments/assets/b2bbfd30-c55c-4065-99ca-d4e75953785d" />
 
 Settings for sticky headers, including height, padding, and divider properties.
 
@@ -222,7 +235,61 @@ Settings for sticky headers, including height, padding, and divider properties.
   - `padding`: `CGFloat` = `10`
   - `spacing`: `CGFloat` = `10`
 
+#### FSStickySortingConfig
+
+<img width="98" alt="FSStickySortingConfig" src="https://github.com/user-attachments/assets/023a345c-2984-4e0d-a6f4-6a31582ffc1e" />
+
+Sticky sorting configurations with customizable text, background, and borders.
+
+- **Properties**:
+  - `text`: `String` = `Sorting`
+  - `textColor`: `Color` = `primary`
+  - `textFont`: `Font` = `systemsize: 14, weight: .medium`
+  - `backgroundColor`: `Color` = `systemBackground`
+  - `selectedBackgroundColor`: `Color` = `systemBackground`
+  - `imageSize`: `CGSize` = `15x15`
+  - `scrolledImageSize`: `CGSize` = `17x17`
+  - `borderColor`: `Color` = `gray.opacity0.8`
+  - `selectedBorderColor`: `Color` = `orange`
+  - `borderWidth`: `CGFloat` = `0.9`
+  - `cornerRadius`: `CGFloat` = `18`
+  - `minWidth`: `CGFloat` = `50`
+  - `defaultWidth`: `CGFloat` = `100`
+  - `height`: `CGFloat` = `36`
+
+#### FSStickyFilteringConfig
+
+<img width="103" alt="FSStickyFilteringConfig" src="https://github.com/user-attachments/assets/667470af-554d-419f-80d3-a01dfa4dafa7" />
+
+Configurations for sticky filtering, including badges, icons, text styling, and borders.
+
+- **Properties**:
+  - `text`: `String` = `Filtering`
+  - `textColor`: `Color` = `.primary`
+  - `selectedTextColor`: `Color` = `.primary`
+  - `textFont`: `Font` = `.system(size: 14, weight: .medium)`
+  - `backgroundColor`: `Color` = `Color(.systemBackground)`
+  - `selectedBackgroundColor`: `Color` = `.orange.opacity(0.1)`
+  - `image`: `Image` = `Image(systemName: "line.3.horizontal.decrease")`
+  - `systemImageForegroundColor`: `Color` = `.orange`
+  - `imageSize`: `CGSize` = `CGSize(width: 15, height: 15)`
+  - `scrolledImageSize`: `CGSize` = `CGSize(width: 17, height: 17)`
+  - `borderColor`: `Color` = `.gray.opacity(0.8)`
+  - `selectedBorderColor`: `Color` = `.orange`
+  - `borderWidth`: `CGFloat` = `0.9`
+  - `cornerRadius`: `CGFloat` = `18`
+  - `badgeTextColor`: `Color` = `.white`
+  - `badgeBackgroundColor`: `Color` = `.orange`
+  - `badgeFont`: `Font` = `.system(size: 9, weight: .medium)`
+  - `badgePadding`: `CGFloat` = `5.0`
+  - `badgeOffset`: `CGPoint` = `CGPoint(x: -6, y: -6)`
+  - `minWidth`: `CGFloat` = `50`
+  - `defaultWidth`: `CGFloat` = `100`
+  - `height`: `CGFloat` = `36`
+    
 #### FSPrimaryConfig
+
+<img width="98" alt="FSPrimaryConfig" src="https://github.com/user-attachments/assets/a6870a2e-1696-4c10-97ff-dc1193e97768" />
 
 Styling for primary sections, including text, background, and border properties.
 
@@ -240,6 +307,8 @@ Styling for primary sections, including text, background, and border properties.
   - `padding`: `CGFloat` = `12`
 
 #### FSPrimaryToggleConfig
+
+<img width="118" alt="FSPrimaryToggleConfig" src="https://github.com/user-attachments/assets/ddbb2a2a-8b6b-4a34-826b-f3ca9a5e9dc0" />
 
 Customizations for toggleable sections with icons.
 
@@ -261,6 +330,8 @@ Customizations for toggleable sections with icons.
 
 #### FSPrimaryIconConfig
 
+<img width="114" alt="FSPrimaryIconConfig" src="https://github.com/user-attachments/assets/c5d7ad77-7d5e-45ba-9e63-d4a3919f37d1" />
+
 Primary sections with icons.
 
 - **Properties**:
@@ -280,6 +351,8 @@ Primary sections with icons.
 
 #### FSPrimarySortingConfig
 
+<img width="102" alt="FSPrimarySortingConfig" src="https://github.com/user-attachments/assets/cd9d785f-2958-4c60-9ad2-6cd0f157c7e5" />
+
 Settings for sorting sections.
 
 - **Properties**:
@@ -295,40 +368,7 @@ Settings for sorting sections.
   - `height`: `CGFloat` = `36`
   - `padding`: `CGFloat` = `12`
 
-#### FSStickySortingConfig
-
-Sticky sorting configurations with badge support.
-
-- **Properties**:
-  - `text`: `String` = `Sorting`
-  - `textColor`: `Color` = `primary`
-  - `textFont`: `Font` = `systemsize: 14, weight: .medium`
-  - `backgroundColor`: `Color` = `systemBackground`
-  - `selectedBackgroundColor`: `Color` = `systemBackground`
-  - `imageSize`: `CGSize` = `15x15`
-  - `scrolledImageSize`: `CGSize` = `17x17`
-  - `borderColor`: `Color` = `gray.opacity0.8`
-  - `selectedBorderColor`: `Color` = `orange`
-  - `borderWidth`: `CGFloat` = `0.9`
-  - `cornerRadius`: `CGFloat` = `18`
-  - `minWidth`: `CGFloat` = `50`
-  - `defaultWidth`: `CGFloat` = `100`
-  - `height`: `CGFloat` = `36`
-
-#### FSStickyFilteringConfig
-
-Configurations for sticky filtering, including badges and icons.
-
-- **Properties**:
-  - `text`: `String` = `Filtering`
-  - `badgeTextColor`: `Color` = `white`
-  - `badgeBackgroundColor`: `Color` = `orange`
-  - `badgeFont`: `Font` = `systemsize: 9, weight: .medium`
-  - `badgePadding`: `CGFloat` = `5.0`
-  - `badgeOffset`: `CGPoint` = `-6, -6`
-  - `minWidth`: `CGFloat` = `50`
-  - `defaultWidth`: `CGFloat` = `100`
-  - `height`: `CGFloat` = `36`
+    
 
 #### Notes
 
